@@ -2,12 +2,6 @@ class DesktopSimulator {
     constructor() {
         this.activeWindows = new Set();
         this.windowZIndex = 100;
-        this.calculator = {
-            display: '0',
-            firstOperand: null,
-            operator: null,
-            waitingForOperand: false
-        };
         
         this.init();
     }
@@ -15,7 +9,6 @@ class DesktopSimulator {
     init() {
         this.setupEventListeners();
         this.updateTime();
-        this.setupCalculator();
     }
 
     setupEventListeners() {
@@ -191,87 +184,6 @@ class DesktopSimulator {
         setTimeout(() => this.updateTime(), 1000);
     }
 
-    setupCalculator() {
-        const display = document.querySelector('.calculator-display');
-        const buttons = document.querySelectorAll('.calc-btn');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const value = button.textContent;
-                this.handleCalculatorInput(value);
-            });
-        });
-    }
-
-    handleCalculatorInput(value) {
-        const display = document.querySelector('.calculator-display');
-        
-        if (value === 'C') {
-            this.calculator.display = '0';
-            this.calculator.firstOperand = null;
-            this.calculator.operator = null;
-            this.calculator.waitingForOperand = false;
-        } else if (value === '±') {
-            this.calculator.display = this.calculator.display === '0' ? '0' : 
-                (parseFloat(this.calculator.display) * -1).toString();
-        } else if (value === '%') {
-            this.calculator.display = (parseFloat(this.calculator.display) / 100).toString();
-        } else if (['+', '−', '×', '÷'].includes(value)) {
-            if (this.calculator.firstOperand === null) {
-                this.calculator.firstOperand = parseFloat(this.calculator.display);
-            } else if (this.calculator.operator) {
-                const result = this.calculate();
-                this.calculator.display = String(result);
-                this.calculator.firstOperand = result;
-            }
-            
-            this.calculator.waitingForOperand = true;
-            this.calculator.operator = value;
-        } else if (value === '=') {
-            if (this.calculator.firstOperand !== null && this.calculator.operator) {
-                const result = this.calculate();
-                this.calculator.display = String(result);
-                this.calculator.firstOperand = null;
-                this.calculator.operator = null;
-                this.calculator.waitingForOperand = true;
-            }
-        } else if (value === '.') {
-            if (this.calculator.waitingForOperand) {
-                this.calculator.display = '0.';
-                this.calculator.waitingForOperand = false;
-            } else if (this.calculator.display.indexOf('.') === -1) {
-                this.calculator.display += '.';
-            }
-        } else {
-            if (this.calculator.waitingForOperand) {
-                this.calculator.display = value;
-                this.calculator.waitingForOperand = false;
-            } else {
-                this.calculator.display = this.calculator.display === '0' ? value : 
-                    this.calculator.display + value;
-            }
-        }
-        
-        display.textContent = this.calculator.display;
-    }
-
-    calculate() {
-        const first = this.calculator.firstOperand;
-        const second = parseFloat(this.calculator.display);
-        
-        switch (this.calculator.operator) {
-            case '+':
-                return first + second;
-            case '−':
-                return first - second;
-            case '×':
-                return first * second;
-            case '÷':
-                return second !== 0 ? first / second : 0;
-            default:
-                return second;
-        }
-    }
 }
 
 // Инициализация симулятора при загрузке страницы

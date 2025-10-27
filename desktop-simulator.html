@@ -15,17 +15,25 @@
                 <span>Пуск</span>
             </div>
             <div class="taskbar-apps">
-                <div class="taskbar-app active" data-app="explorer">
-                    <div class="app-icon">📁</div>
-                    <span>Проводник</span>
+                <div class="taskbar-app active" data-app="messenger">
+                    <div class="app-icon">💬</div>
+                    <span>Мессенджер</span>
                 </div>
                 <div class="taskbar-app" data-app="browser">
                     <div class="app-icon">🌐</div>
                     <span>Браузер</span>
                 </div>
-                <div class="taskbar-app" data-app="calculator">
-                    <div class="app-icon">🧮</div>
-                    <span>Калькулятор</span>
+                <div class="taskbar-app" data-app="mail">
+                    <div class="app-icon">📧</div>
+                    <span>Почта</span>
+                </div>
+                <div class="taskbar-app" data-app="music">
+                    <div class="app-icon">🎵</div>
+                    <span>Музыка</span>
+                </div>
+                <div class="taskbar-app" data-app="settings">
+                    <div class="app-icon">⚙️</div>
+                    <span>Настройки</span>
                 </div>
             </div>
             <div class="system-tray">
@@ -39,28 +47,72 @@
         <!-- Рабочий стол -->
         <div class="desktop-area">
             <!-- Иконки на рабочем столе -->
-            <div class="desktop-icon" data-app="explorer">
-                <div class="icon-image">📁</div>
-                <span class="icon-label">Проводник</span>
+            <div class="desktop-icon" data-app="messenger">
+                <div class="icon-image">💬</div>
+                <span class="icon-label">Мессенджер</span>
+            </div>
+            <div class="desktop-icon" data-app="worktext">
+                <div class="icon-image">📝</div>
+                <span class="icon-label">Рабочий текст</span>
             </div>
             <div class="desktop-icon" data-app="browser">
                 <div class="icon-image">🌐</div>
                 <span class="icon-label">Браузер</span>
             </div>
-            <div class="desktop-icon" data-app="calculator">
-                <div class="icon-image">🧮</div>
-                <span class="icon-label">Калькулятор</span>
+            <div class="desktop-icon" data-app="settings">
+                <div class="icon-image">⚙️</div>
+                <span class="icon-label">Настройки</span>
             </div>
-            <div class="desktop-icon" data-app="notepad">
-                <div class="icon-image">📝</div>
-                <span class="icon-label">Блокнот</span>
+            <div class="desktop-icon" data-app="mail">
+                <div class="icon-image">📧</div>
+                <span class="icon-label">Почта</span>
+            </div>
+            <div class="desktop-icon" data-app="game">
+                <div class="icon-image">🎮</div>
+                <span class="icon-label">Игра</span>
+            </div>
+            <div class="desktop-icon" data-app="social">
+                <div class="icon-image">👥</div>
+                <span class="icon-label">Соцсеть</span>
+            </div>
+            <div class="desktop-icon" data-app="notes">
+                <div class="icon-image">📋</div>
+                <span class="icon-label">Заметки</span>
+            </div>
+            <div class="desktop-icon" data-app="music">
+                <div class="icon-image">🎵</div>
+                <span class="icon-label">Музыка</span>
+            </div>
+            <div class="desktop-icon" data-app="photo">
+                <div class="icon-image">📸</div>
+                <span class="icon-label">Фото</span>
+            </div>
+            <div class="desktop-icon" data-app="calls">
+                <div class="icon-image">📞</div>
+                <span class="icon-label">Звонки</span>
+            </div>
+            <div class="desktop-icon" data-app="calendar">
+                <div class="icon-image">📅</div>
+                <span class="icon-label">Календарь</span>
+            </div>
+            <div class="desktop-icon" data-app="book">
+                <div class="icon-image">📖</div>
+                <span class="icon-label">Книжка</span>
+            </div>
+            <div class="desktop-icon" data-app="sticker">
+                <div class="icon-image">🏷️</div>
+                <span class="icon-label">Стикер</span>
+            </div>
+            <div class="desktop-icon" data-app="exit">
+                <div class="icon-image">🚪</div>
+                <span class="icon-label">Выход</span>
             </div>
         </div>
 
         <!-- Окна приложений -->
-        <div class="window" id="explorer-window" style="display: none;">
+        <div class="window" id="messenger-window" style="display: none;">
             <div class="window-header">
-                <div class="window-title">Проводник</div>
+                <div class="window-title">Мессенджер</div>
                 <div class="window-controls">
                     <button class="minimize-btn">−</button>
                     <button class="maximize-btn">□</button>
@@ -68,17 +120,15 @@
                 </div>
             </div>
             <div class="window-content">
-                <div class="file-explorer">
-                    <div class="folder-tree">
-                        <div class="folder-item">📁 Этот компьютер</div>
-                        <div class="folder-item">📁 Документы</div>
-                        <div class="folder-item">📁 Изображения</div>
-                        <div class="folder-item">📁 Загрузки</div>
+                <div class="messenger-app">
+                    <div class="chat-list">
+                        <div class="chat-item">👤 Анна</div>
+                        <div class="chat-item">👤 Максим</div>
+                        <div class="chat-item">👤 Елена</div>
                     </div>
-                    <div class="file-list">
-                        <div class="file-item">📄 Документ.txt</div>
-                        <div class="file-item">📄 Файл.pdf</div>
-                        <div class="file-item">🖼️ Картинка.jpg</div>
+                    <div class="chat-area">
+                        <div class="message">Привет! Как дела?</div>
+                        <div class="message">Все хорошо, спасибо!</div>
                     </div>
                 </div>
             </div>
@@ -107,9 +157,9 @@
             </div>
         </div>
 
-        <div class="window" id="calculator-window" style="display: none;">
+        <div class="window" id="worktext-window" style="display: none;">
             <div class="window-header">
-                <div class="window-title">Калькулятор</div>
+                <div class="window-title">Рабочий текст</div>
                 <div class="window-controls">
                     <button class="minimize-btn">−</button>
                     <button class="maximize-btn">□</button>
@@ -117,36 +167,44 @@
                 </div>
             </div>
             <div class="window-content">
-                <div class="calculator">
-                    <div class="calculator-display">0</div>
-                    <div class="calculator-buttons">
-                        <button class="calc-btn clear">C</button>
-                        <button class="calc-btn operator">±</button>
-                        <button class="calc-btn operator">%</button>
-                        <button class="calc-btn operator">÷</button>
-                        <button class="calc-btn number">7</button>
-                        <button class="calc-btn number">8</button>
-                        <button class="calc-btn number">9</button>
-                        <button class="calc-btn operator">×</button>
-                        <button class="calc-btn number">4</button>
-                        <button class="calc-btn number">5</button>
-                        <button class="calc-btn number">6</button>
-                        <button class="calc-btn operator">−</button>
-                        <button class="calc-btn number">1</button>
-                        <button class="calc-btn number">2</button>
-                        <button class="calc-btn number">3</button>
-                        <button class="calc-btn operator">+</button>
-                        <button class="calc-btn number zero">0</button>
-                        <button class="calc-btn number">.</button>
-                        <button class="calc-btn equals">=</button>
+                <div class="worktext-app">
+                    <div class="toolbar">
+                        <button class="tool-btn">📄 Новый</button>
+                        <button class="tool-btn">💾 Сохранить</button>
+                        <button class="tool-btn">📂 Открыть</button>
+                    </div>
+                    <textarea class="worktext-editor" placeholder="Начните печатать..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="mail-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">Почта</div>
+                <div class="window-controls">
+                    <button class="minimize-btn">−</button>
+                    <button class="maximize-btn">□</button>
+                    <button class="close-btn">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="mail-app">
+                    <div class="mail-list">
+                        <div class="mail-item">📧 Новое письмо от Анны</div>
+                        <div class="mail-item">📧 Уведомление от банка</div>
+                        <div class="mail-item">📧 Рассылка новостей</div>
+                    </div>
+                    <div class="mail-content">
+                        <h3>Новое письмо</h3>
+                        <p>Добро пожаловать в почтовый клиент!</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="window" id="notepad-window" style="display: none;">
+        <div class="window" id="music-window" style="display: none;">
             <div class="window-header">
-                <div class="window-title">Блокнот</div>
+                <div class="window-title">Музыка</div>
                 <div class="window-controls">
                     <button class="minimize-btn">−</button>
                     <button class="maximize-btn">□</button>
@@ -154,7 +212,53 @@
                 </div>
             </div>
             <div class="window-content">
-                <textarea class="notepad-text" placeholder="Введите текст..."></textarea>
+                <div class="music-app">
+                    <div class="music-player">
+                        <div class="song-info">🎵 Текущая песня</div>
+                        <div class="controls">
+                            <button class="music-btn">⏮️</button>
+                            <button class="music-btn">⏸️</button>
+                            <button class="music-btn">⏭️</button>
+                        </div>
+                    </div>
+                    <div class="playlist">
+                        <div class="playlist-item">🎵 Песня 1</div>
+                        <div class="playlist-item">🎵 Песня 2</div>
+                        <div class="playlist-item">🎵 Песня 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="settings-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">Настройки</div>
+                <div class="window-controls">
+                    <button class="minimize-btn">−</button>
+                    <button class="maximize-btn">□</button>
+                    <button class="close-btn">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="settings-app">
+                    <div class="settings-category">
+                        <h3>🔊 Звук</h3>
+                        <div class="setting-item">
+                            <label>Громкость:</label>
+                            <input type="range" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                    <div class="settings-category">
+                        <h3>🎨 Внешний вид</h3>
+                        <div class="setting-item">
+                            <label>Тема:</label>
+                            <select>
+                                <option>Светлая</option>
+                                <option>Темная</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
