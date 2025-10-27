@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симулятор рабочего стола ПК</title>
+    <link rel="stylesheet" href="desktop-styles.css">
+</head>
+<body>
+    <div class="desktop">
+        <!-- Панель задач -->
+        <div class="taskbar">
+            <div class="start-button">
+                <div class="start-icon">⊞</div>
+                <span>Пуск</span>
+            </div>
+            <div class="taskbar-apps">
+                <div class="taskbar-app active" data-app="explorer">
+                    <div class="app-icon">📁</div>
+                    <span>Проводник</span>
+                </div>
+                <div class="taskbar-app" data-app="browser">
+                    <div class="app-icon">🌐</div>
+                    <span>Браузер</span>
+                </div>
+                <div class="taskbar-app" data-app="calculator">
+                    <div class="app-icon">🧮</div>
+                    <span>Калькулятор</span>
+                </div>
+            </div>
+            <div class="system-tray">
+                <div class="tray-icon">🔊</div>
+                <div class="tray-icon">🌐</div>
+                <div class="tray-icon">🔋</div>
+                <div class="time">12:34</div>
+            </div>
+        </div>
+
+        <!-- Рабочий стол -->
+        <div class="desktop-area">
+            <!-- Иконки на рабочем столе -->
+            <div class="desktop-icon" data-app="explorer">
+                <div class="icon-image">📁</div>
+                <span class="icon-label">Проводник</span>
+            </div>
+            <div class="desktop-icon" data-app="browser">
+                <div class="icon-image">🌐</div>
+                <span class="icon-label">Браузер</span>
+            </div>
+            <div class="desktop-icon" data-app="calculator">
+                <div class="icon-image">🧮</div>
+                <span class="icon-label">Калькулятор</span>
+            </div>
+            <div class="desktop-icon" data-app="notepad">
+                <div class="icon-image">📝</div>
+                <span class="icon-label">Блокнот</span>
+            </div>
+        </div>
+
+        <!-- Окна приложений -->
+        <div class="window" id="explorer-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">Проводник</div>
+                <div class="window-controls">
+                    <button class="minimize-btn">−</button>
+                    <button class="maximize-btn">□</button>
+                    <button class="close-btn">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="file-explorer">
+                    <div class="folder-tree">
+                        <div class="folder-item">📁 Этот компьютер</div>
+                        <div class="folder-item">📁 Документы</div>
+                        <div class="folder-item">📁 Изображения</div>
+                        <div class="folder-item">📁 Загрузки</div>
+                    </div>
+                    <div class="file-list">
+                        <div class="file-item">📄 Документ.txt</div>
+                        <div class="file-item">📄 Файл.pdf</div>
+                        <div class="file-item">🖼️ Картинка.jpg</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="browser-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">Браузер</div>
+                <div class="window-controls">
+                    <button class="minimize-btn">−</button>
+                    <button class="maximize-btn">□</button>
+                    <button class="close-btn">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="browser-toolbar">
+                    <button class="nav-btn">←</button>
+                    <button class="nav-btn">→</button>
+                    <button class="nav-btn">⟳</button>
+                    <input type="text" class="address-bar" placeholder="Введите адрес сайта...">
+                </div>
+                <div class="browser-content">
+                    <h2>Добро пожаловать в браузер!</h2>
+                    <p>Это симуляция веб-браузера в нашем симуляторе рабочего стола.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="calculator-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">Калькулятор</div>
+                <div class="window-controls">
+                    <button class="minimize-btn">−</button>
+                    <button class="maximize-btn">□</button>
+                    <button class="close-btn">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="calculator">
+                    <div class="calculator-display">0</div>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn clear">C</button>
+                        <button class="calc-btn operator">±</button>
+                        <button class="calc-btn operator">%</button>
+                        <button class="calc-btn operator">÷</button>
+                        <button class="calc-btn number">7</button>
+                        <button class="calc-btn number">8</button>
+                        <button class="calc-btn number">9</button>
+                        <button class="calc-btn operator">×</button>
+                        <button class="calc-btn number">4</button>
+                        <button class="calc-btn number">5</button>
+                        <button class="calc-btn number">6</button>
+                        <button class="calc-btn operator">−</button>
+                        <button class="calc-btn number">1</button>
+                        <button class="calc-btn number">2</button>
+                        <button class="calc-btn number">3</button>
+                        <button class="calc-btn operator">+</button>
+                        <button class="calc-btn number zero">0</button>
+                        <button class="calc-btn number">.</button>
+                        <button class="calc-btn equals">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="notepad-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">Блокнот</div>
+                <div class="window-controls">
+                    <button class="minimize-btn">−</button>
+                    <button class="maximize-btn">□</button>
+                    <button class="close-btn">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <textarea class="notepad-text" placeholder="Введите текст..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="desktop-script.js"></script>
+</body>
+</html>
